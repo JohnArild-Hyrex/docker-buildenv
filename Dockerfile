@@ -1,6 +1,7 @@
 FROM ubuntu:mantic
 
 RUN apt-get update
+RUN apt-get install -y python3-full
 RUN apt-get install -y g++ cmake ssh git g++
 RUN apt-get install -y libprotobuf-dev protobuf-compiler-grpc libgrpc++-dev 
 RUN apt-get install -y libgtest-dev libspdlog-dev
