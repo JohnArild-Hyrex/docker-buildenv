@@ -1,0 +1,19 @@
+name: DockerBuild
+
+on:
+  push:
+    branches: [ "*" ]
+  pull_request:
+    branches: [ "*" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: |
+          sudo apt-get update && sudo apt-get install -y \
+          docker.io docker-buildx
+      - name: Run Docker Build
+        run: docker buildx build .
