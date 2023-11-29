@@ -8,6 +8,7 @@ RUN apt-get install -y libgtest-dev libspdlog-dev
 RUN apt-get install -y fish neovim nano sudo
 RUN apt-get install -y kmod iproute2 can-utils
 RUN apt-get install -y openssh-server curl
+RUN apt-get install -y libcxxopts-dev
 RUN curl -fsSL https://code-server.dev/install.sh | bash
 
 # Setup user
