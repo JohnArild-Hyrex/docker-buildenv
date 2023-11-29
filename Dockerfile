@@ -14,6 +14,7 @@ RUN curl -fsSL https://code-server.dev/install.sh | bash
 # Setup user
 RUN useradd -rm -g root -G sudo -s /usr/bin/fish -p "$(openssl passwd -1 docker)" docker
 RUN echo "docker ALL=(ALL:ALL) NOPASSWD: /etc/init.d/ssh" > /etc/sudoers.d/sshd
+RUN echo "docker ALL=(ALL:ALL) NOPASSWD: /actions-runner/*" > /etc/sudoers.d/action-runner
 USER docker
 WORKDIR /home/docker
 RUN ssh-keygen -A
