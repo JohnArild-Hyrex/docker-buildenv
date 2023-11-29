@@ -1,0 +1,9 @@
+version: '3'
+services:
+  github-runner-service:
+    image: hyrexas/ubuntu:mantic
+    network_mode: "host"
+    volumes:
+      - /home/hyrex/actions-runner:/actions-runner
+    command: sudo /actions-runner/run_as_sudo.sh
+    restart: unless-stopped
